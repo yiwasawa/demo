@@ -1,0 +1,27 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="odata_demo3.odata_demo3">
+            <EntityType Name="TRAININFOType">
+                <Key>
+                    <PropertyRef Name="DATE"/>
+                    <PropertyRef Name="JIKOKU"/>
+                    <PropertyRef Name="LINE"/>
+                </Key>
+                <Property Name="DATE" Type="Edm.DateTime" Nullable="false"/>
+                <Property Name="JIKOKU" Type="Edm.Time" Nullable="false"/>
+                <Property Name="LINE" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="INFOTEXT" Type="Edm.String" MaxLength="512"/>
+                <Property Name="STATUS" Type="Edm.String" MaxLength="50"/>
+                <Property Name="CAUSE" Type="Edm.String" MaxLength="50"/>
+            </EntityType>
+            <EntityContainer Name="odata_demo3" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="TRAININFO" EntityType="odata_demo3.odata_demo3.TRAININFOType"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
